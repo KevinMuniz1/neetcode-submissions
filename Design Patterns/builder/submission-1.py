@@ -1,0 +1,58 @@
+class Meal:
+    def __init__(self):
+        self.cost = 0.0
+        self.takeOut = False
+        self.main = ""
+        self.drink = ""
+
+    def getCost(self) -> float:
+        return self.cost
+
+    def setCost(self, cost: float) -> None:
+        self.cost = cost
+
+    def getTakeOut(self) -> bool:
+        return self.takeOut
+
+    def setTakeOut(self, takeOut: bool) -> None:
+        self.takeOut = takeOut
+
+    def getMain(self) -> str:
+        return self.main
+
+    def setMain(self, main: str) -> None:
+        self.main = main
+
+    def getDrink(self) -> str:
+        return self.drink
+
+    def setDrink(self, drink: str) -> None:
+        self.drink = drink
+
+
+class MealBuilder:
+    
+    def __init__(self):
+
+        self.myMeal = Meal()
+
+    def addCost(self, cost: float) -> 'MealBuilder':
+        self.myMeal.setCost(cost)
+
+    def addTakeOut(self, takeOut: bool) -> 'MealBuilder':
+        self.myMeal.setTakeOut(takeOut)
+
+    def addMainCourse(self, main: str) -> 'MealBuilder':
+        self.myMeal.setMain(main)
+
+    def addDrink(self, drink: str) -> 'MealBuilder':
+        self.myMeal.setDrink(drink)
+
+    def build(self) -> Meal:
+
+        return self.myMeal
+
+
+        
+
+
